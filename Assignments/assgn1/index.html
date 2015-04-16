@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Javascript</title>
+</head>
+<script>
+	//example of pass by value
+	var a = 10;
+	var b = a;
+	console.log(a);
+	console.log(b);
+
+	//example of pass reference
+	var c = {firstName:'Pournami', lastName:'Azad'};
+	var d = c;
+	console.log(c.firstName);
+	console.log(d.firstName);
+
+	//example of value changes for pass by value
+	var x = 2;
+	var y = 3;
+	y=x;
+	console.log(x);
+	console.log(y);
+
+	//example of value changes for pass by reference
+	var user = { name: 'John' };
+	var obj = user;
+	console.log(user.name);
+	console.log(obj.name);
+	obj.name = 'Peter';
+	console.log(user.name);
+
+	//Create variables with all possible variable types and log the 'typeof'
+ 	var p = 50;
+	var q = "Anna";
+	var r = "true";
+	var s = {place: 'India'};
+	console.log(typeof p);
+	console.log(typeof q);
+	console.log(typeof r);
+	console.log(typeof s);
+
+	//Create variables for "Function" and "Array" and log the 'typeof'
+	var k = function () {}
+	console.log( typeof k);
+	var m = [1,2,3];
+	console.log( typeof m);
+
+
+</script>
+<body>
+
+</body>
+</html>
