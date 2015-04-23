@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript" src="underscore-min.js"></script>
+</head>
+<body>
+	<script type="text/javascript">
+
+		var ary = [1, 2, 3, 4, 5, 6];
+		var ary2 = [0, 2, false, null, undefined];
+		var ary3 = [1, [2,0], [[[3, 4, 5, 6]]]];
+		var ary4 = [1, 2,[2, 3]];
+
+		var todo = [{
+			id: 101,
+			name: 'Soaps 1 dozen',
+			complete: false
+		}, {
+			id: 102,
+			name: 'Table Lamp - 2 Nos.',
+			complete: false
+		}, {
+			id: 103,
+			name: 'Knife - 2 Nos.',
+			complete: false
+		}, {
+			id: 104,
+			name: 'Pillow covers - 2 Nos.',
+			complete: false
+		}]; 
+
+		/**
+		*	Collections
+		*/
+
+		// Each
+		var x = _.each(ary, function(element, index, list) {
+			console.log(element);		
+		});
+
+		var y = _.each(todo, function(value, key, list) {
+			console.log (value);
+		});
+		
+		// Map
+		var z = _.map(ary, function(element) {
+			console.log(element);		
+		});
+		
+		var q = _.map(todo, function(value) {
+			console.log(value.name);		
+		});
+		
+		// Find
+		var f = _.find(todo, function(item) {
+			return item.id == 104;		
+		});
+		console.log(f);
+		
+		// Where
+		console.log(_.where(todo, {id: 102, name:'Table Lamp - 2 Nos.'}));
+		
+		// Findwhere
+		console.log(_.findWhere(todo, {complete: false}));
+		
+		// Reject
+		var j = _.reject(todo, function(item) {
+			return item.id == 104;		
+		});
+		console.log(j);
+		
+		// Every
+		console.log(_.every(todo, {id: 102, name:'Table Lamp - 2 Nos.',complete: false}));
+		
+		// Contains
+		console.log(_.contains(ary, 5));
+		
+		// Pluck
+		var l = _.pluck(todo, 'name', function(element) {
+			return element;		
+		});
+		console.log(l);
+		
+		// Max
+		var o = _.max(todo, function(element) {
+			return element.id;		
+		});
+		console.log(o);
+
+		// Min
+		var k = _.min(todo, function(element) {
+			return element.id;		
+		});
+		console.log(k);
+		
+		// sortBy
+		var s = _.sortBy(todo, 'name', function(element) {
+			return element;		
+		});
+		console.log(s);
+
+		// countBy
+		var s = _.countBy(ary, function(element) {
+			console.log( element % 2 === 0);		
+		});
+
+		// size
+		console.log(_.size(ary));
+
+		console.log(_.partition(todo,{name: 'Table Lamp - 2 Nos.'}));
+		
+		/**
+		*	Array
+		*/
+
+		// first
+		var n = _.first(ary, 3);
+		console.log(n);
+
+		// initial
+		var s = _.initial(ary, 2);
+		console.log(s);
+
+		// last
+		var s = _.last(ary);
+		console.log(s);
+
+		// compact
+		var s = _.compact(ary2);
+		console.log(s);
+
+		// flatten
+		var s = _.flatten(ary3);
+		console.log(s);
+
+		var s = _.flatten(ary3,true);
+		console.log(s);
+
+		// without
+		var s = _.without(ary, 1, 6);
+		console.log(s);
+
+		// intersection
+		var s = _.intersection(ary4);
+		console.log(s);
+
+	</script>
+</body>
+</html>
